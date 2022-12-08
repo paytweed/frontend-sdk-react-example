@@ -1,1 +1,1 @@
-# frontend-sdk-react-example
+# Example of Tweed frontend React SDK integration
