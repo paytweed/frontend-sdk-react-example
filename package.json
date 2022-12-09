@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@paytweed/frontend-sdk-react": "^0.1.18",
+    "@paytweed/frontend-sdk-react": "^0.1.19",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.6",
     "@types/react": "^18.0.26",
@@ -11,8 +11,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "tslib": "^2.4.1",
-    "typescript": "^4.9.4"
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "start": "react-scripts start"
@@ -25,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
+    "@types/styled-components": "^5.1.26",
     "babel-loader": "^9.1.0"
   }
 }
