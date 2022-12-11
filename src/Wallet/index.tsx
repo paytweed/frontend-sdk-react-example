@@ -3,15 +3,19 @@ import { useCallback } from "react";
 import S from "./style";
 
 const WalletData = () => {
-  const { data: cryptoBalance, error, loading } = hooks.useCryptoBalance();
+  const { data: address, error: errorAddress, loading: loadingAdderess } = hooks.useWalletAddress();
+  if (loadingAdderess) return <div>Loading</div>;
+  if (errorAddress) return <div>Error: {errorAddress}</div>;
+  
+  const { data: cryptoBalance, error: errorBalance, loading: loadingBalance } = hooks.useCryptoBalance();
+  if (loadingBalance) return <div>Loading</div>;
+  if (errorBalance) return <div>Error: {errorBalance}</div>;
 
-  if (loading) return <div>Loading</div>;
-  if (error) return <div>Error: {error}</div>;
 
   return (
     <S.WalletContainer>
-      <div>Balance</div>
-      <div>ETH: {cryptoBalance?.ETH}</div>
+      <div>Address: {address}</div>
+      <div>Balance ETH: {cryptoBalance?.ETH}</div>
     </S.WalletContainer>
   );
 };
