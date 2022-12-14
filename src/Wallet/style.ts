@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export default {
   Card: styled.div`
-    border: 1px solid lightgrey;
+    border: 3px solid lightgrey;
+    border-radius: 40px;
+
   `,
   Container: styled.div`
     align-items: center;
@@ -15,6 +17,6 @@ export default {
   WalletContainer: styled.div`
     height: 300px;
     padding: 16px;
-    width: 200px;
+    width: 460px;
   `,
 };
