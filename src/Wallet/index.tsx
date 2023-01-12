@@ -3,19 +3,16 @@ import { useCallback } from "react";
 import S from "./style";
 
 const WalletData = () => {
-  const { data: address, error: errorAddress, loading: loadingAdderess } = hooks.useWalletAddress();
-  if (loadingAdderess) return <div>Loading</div>;
-  if (errorAddress) return <div>Error: {errorAddress}</div>;
-  
-  const { data: cryptoBalance, error: errorBalance, loading: loadingBalance } = hooks.useCryptoBalance();
-  if (loadingBalance) return <div>Loading</div>;
-  if (errorBalance) return <div>Error: {errorBalance}</div>;
+  const { data: address, error: errorAddress, loading: loadingAdderess } = hooks.useWalletAddress({blockchainId: 'ethereum'});
+  const { data: coinBalance, error: errorBalance, loading: loadingBalance } = hooks.useCoinBalance();
 
+  if (loadingAdderess || loadingBalance) return <div>Loading</div>;
+  if (errorAddress || errorBalance) return <div>Error</div>;
 
   return (
     <S.WalletContainer>
       <div>Address: {address}</div>
-      <div>Balance ETH: {cryptoBalance?.ETH}</div>
+      <div>Balance ETH: {coinBalance?.ethereum}</div>
     </S.WalletContainer>
   );
 };
@@ -33,7 +30,7 @@ const Wallet = () => {
     return walletExists ? (
       <WalletData />
     ) : (
-      <Widget.Wallet.Create onSuccess={onWalletCreated} />
+      <Widget.Wallet.Create callbacks={{onSuccess: onWalletCreated}} />
     );
   };
 
