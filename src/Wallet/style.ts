@@ -13,10 +13,5 @@ export default {
     height: 100vh;
     justify-content: center;
     width: 100vw;
-  `,
-  WalletContainer: styled.div`
-    height: 300px;
-    padding: 16px;
-    width: 460px;
-  `,
+  `
 };
