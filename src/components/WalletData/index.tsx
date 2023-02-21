@@ -15,7 +15,7 @@ import {
   Wrapper
 } from "../../style";
 import TransactionsList from "../TransactionsList";
-const chains = ["tezos", "polygon", "ethereum"];
+const chains = ["tezosGhost", "polygonMumbai", "ethereumGoerli"];
 
 const MyTransactions = () => {
   const {
@@ -52,13 +52,13 @@ const WalletData = () => {
 
   const onSendTransaction = async () => {
     const destinationAddress = await sdk.wallet.getAddress({
-      blockchainId: "ethereum",
+      blockchainId: "ethereumGoerli",
     });
 
     await sdk.coin.sendToWallet({
       walletAddress: destinationAddress,
       cryptoCurrencyAmount: "1",
-      blockchainId: "ethereum",
+      blockchainId: currentChain,
     });
   };
 
@@ -67,7 +67,7 @@ const WalletData = () => {
   };
 
   const onCreateQR = async () => {
-    await sdk.wallet.showAddress({ blockchainId: "ethereum" });
+    await sdk.wallet.showAddress({ blockchainId: currentChain });
   };
 
   const Address = () => {

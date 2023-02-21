@@ -1,5 +1,6 @@
 import "./index.css";
 import { TweedFrontendSdkProvider } from "@paytweed/frontend-sdk-react";
+import { Environment } from "@paytweed/shared-sdk";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Wallet from "./Wallet";
@@ -17,7 +18,7 @@ const Application = () => {
   }, []);
 
   return (
-    <TweedFrontendSdkProvider sendMessageToBackend={sendMessageToBackend}>
+    <TweedFrontendSdkProvider environment={Environment.demo} sendMessageToBackend={sendMessageToBackend} defaultBlockchainIds={[ "ethereumGoerli", "tezosGhost"]} >
       <Wallet />
     </TweedFrontendSdkProvider>
   );

@@ -1,13 +1,14 @@
 import { TokenTransaction } from "@paytweed/shared-sdk";
 import { SubTitle, Table, Td, Th } from "../../style";
 
-const chains = ["tezos", "polygon", "ethereum"];
+const chains = ["tezosGhost", "polygonMumbai", "ethereumGoerli"];
 
 interface Data {
   [k: string]: TokenTransaction[];
 }
 
 const TransactionsList: React.FC<{ data: Data }> = ({ data }) => {
+  
   return (
     <>
       {chains.map((chain) => (
@@ -26,7 +27,7 @@ const TransactionsList: React.FC<{ data: Data }> = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {data[chain].map((entry) => (
+            {data[chain] ? data[chain].map((entry) => (
               <tr key={entry.id}>
                 <Td>{entry.createdAt}</Td>
                 <Td>{entry.cryptoCurrencyAmount}</Td>
@@ -37,7 +38,7 @@ const TransactionsList: React.FC<{ data: Data }> = ({ data }) => {
                 <Td>{entry.toAddress}</Td>
                 <Td>{entry.status}</Td>
               </tr>
-            ))}
+            )) : 'no transaction'}
           </tbody>
         </Table>
       ))}
