@@ -1,7 +1,7 @@
-import "./index.css";
 import { TweedFrontendSdkProvider } from "@paytweed/frontend-sdk-react";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 import Wallet from "./Wallet";
 
 const Application = () => {
