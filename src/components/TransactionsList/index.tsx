@@ -1,4 +1,4 @@
-import { TokenTransaction } from "@paytweed/shared-sdk";
+import { TokenTransaction } from "@paytweed/frontend-sdk-react";
 import { SubTitle, Table, Td, Th } from "../../style";
 
 const chains = ["tezosGhost", "polygonMumbai", "ethereumGoerli"];
