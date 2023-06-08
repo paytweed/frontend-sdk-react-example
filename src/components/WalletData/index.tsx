@@ -52,23 +52,30 @@ const WalletData = () => {
 
   const onSendTransaction = async () => {
     const destinationAddress = await sdk.wallet.getAddress({
-      blockchainId: "ethereumGoerli",
+      blockchainId: "polygonMumbai",
     });
 
     await sdk.coin.sendToWallet({
+      blockchainId: "polygonMumbai",
       walletAddress: destinationAddress,
       cryptoCurrencyAmount: "1",
-      blockchainId: "ethereumGoerli",
     });
   };
 
   const onCreateRecovery = async () => {
-    const reAddress = await sdk.wallet.createRecovery();
+    await sdk.wallet.createRecovery();
   };
 
   const onCreateQR = async () => {
     await sdk.wallet.showAddress({ blockchainId: "ethereumGoerli" });
   };
+
+  const onCreateNftTransaction = async () => {
+    await sdk.nft.buyWithFiat({
+      nftId: '1',
+    })
+
+  }
 
   const Address = () => {
     const {
@@ -107,6 +114,7 @@ const WalletData = () => {
         <MenuItemsLine>
           <Button onClick={onSendTransaction}>Send Transaction</Button>
           <Button onClick={onCreateRecovery}>Create a Recovery Kit</Button>
+          <Button onClick={onCreateNftTransaction} >Buy Nft</Button>
           <Button onClick={handleMYTransactionsButton}>
             {displayTransactions ? "close" : "My transactions"}
           </Button>
