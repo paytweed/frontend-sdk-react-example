@@ -29,9 +29,9 @@ const TransactionsList: React.FC<{ data: Data }> = ({ data }) => {
             {data[chain].map((entry) => (
               <tr key={entry.id}>
                 <Td>{entry.createdAt}</Td>
-                <Td>{entry.cryptoCurrencyAmount}</Td>
-                <Td>{entry.cryptoCurrencyToken.name}</Td>
-                <Td>{entry.cryptoCurrencyToken.symbol}</Td>
+                <Td>{entry.value}</Td>
+                <Td>{entry.tokenMetadata.tokenName}</Td>
+                <Td>{entry.tokenMetadata.tokenSymbol}</Td>
                 <Td>{entry.direction}</Td>
                 <Td>{entry.fromAddress}</Td>
                 <Td>{entry.toAddress}</Td>

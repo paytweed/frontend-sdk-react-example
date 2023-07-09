@@ -58,7 +58,7 @@ const WalletData = () => {
     await sdk.coin.sendToWallet({
       blockchainId: "polygonMumbai",
       walletAddress: destinationAddress,
-      cryptoCurrencyAmount: "1",
+      value: "1",
     });
   };
 
