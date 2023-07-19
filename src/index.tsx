@@ -1,8 +1,8 @@
 import { TweedFrontendSdkProvider } from "@paytweed/frontend-sdk-react";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import Wallet from "./Wallet";
+import Wallet from "./WalletPage";
+import SettingSection from "./components/Settings";
 
 const Application = () => {
   const sendMessageToBackend = React.useCallback(async (message: string) => {
@@ -18,6 +18,7 @@ const Application = () => {
 
   return (
     <TweedFrontendSdkProvider sendMessageToBackend={sendMessageToBackend}>
+      <SettingSection />
       <Wallet />
     </TweedFrontendSdkProvider>
   );

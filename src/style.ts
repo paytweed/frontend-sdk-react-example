@@ -6,8 +6,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: clip;
 `;
 
 export const Header = styled.div`
@@ -110,8 +108,7 @@ export const ChainButton = styled.button<{ primary: boolean }>`
   border-radius: 20px;
   border: 2px solid dodgerblue;
   padding: 0px 24px;
-  margin: 0px 12px;
-  width: 180px;
+  width: 250px;
   background: #fff;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
@@ -140,7 +137,7 @@ export const LogoutButton = styled.button`
   }
 `;
 
-export const Powered = styled.body`
+export const Powered = styled.div`
   position: absolute;
   bottom: 0px;
   font-size: 15px;
