@@ -9,9 +9,8 @@ import {
   Title,
   Wrapper,
 } from "../../style";
-import TransactionsList from "../TransactionsList";
-import WalletAddress from "./address";
 import WalletActionsSection from "./actions";
+import WalletAddress from "./address";
 import WalletTransactionsSection from "./transactions";
 
 const WalletData = () => {

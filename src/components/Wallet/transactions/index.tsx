@@ -1,6 +1,5 @@
 import { hooks } from "@paytweed/frontend-sdk-react";
 import TransactionsList from "../../TransactionsList";
-import { useEffect } from "react";
 
 interface WalletTransactionsSectionProps {
   selectedChain: string;
@@ -22,4 +21,5 @@ export default function WalletTransactionsSection({
   if (transactionsError)
     return <h5 style={{ textAlign: "center" }}>error fetching transction</h5>;
   if (transactions) return <TransactionsList data={transactions as any} />;
+  return null;
 }
