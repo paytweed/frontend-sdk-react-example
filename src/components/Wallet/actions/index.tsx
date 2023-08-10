@@ -13,7 +13,7 @@ export default function WalletActionsSection({
   const [createRecoveryKit] = hooks.useCreateRecovery();
   const [buyNft] = hooks.useBuyNft();
   const tweedClient = hooks.useTweedFrontendSDK();
-  const { data: tweedProvider } = hooks.useBlockchainProvider({ chainId: 'ethereumSepolia' })
+  const { data: tweedProvider } = hooks.useBlockchainProvider({ chainId: selectedChain })
 
   const sendTransactionEthers = async () => {
     const web3Provider = new ethers.providers.Web3Provider(tweedProvider!);
