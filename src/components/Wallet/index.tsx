@@ -21,7 +21,7 @@ const WalletData = () => {
     loading: blockchainListLoading,
     error: blockchainListError,
   } = hooks.useBlockchainList();
-  const [logoutWallet] = hooks.useLogout();
+  const [logoutWallet] = hooks.useWalletLogout();
 
   const chainIds = blockchainList;
 
