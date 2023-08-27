@@ -22,4 +22,6 @@ export default function WalletTransactionsSection({
   if (transactionsError)
     return <h5 style={{ textAlign: "center" }}>error fetching transction</h5>;
   if (transactions) return <TransactionsList data={transactions as any} />;
+
+  return null;
 }

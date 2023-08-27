@@ -13,8 +13,9 @@ const Wallet = () => {
 
   useEffect(() => {
     if (walletExists === undefined) return;
-    if (!walletExists)
-      return createWallet({ callbacks: { onSuccess: onWalletCreated } });
+    if (!walletExists) {
+      createWallet({ callbacks: { onSuccess: onWalletCreated } });
+    }
   }, [walletExists]);
 
   const renderContent = () => {
