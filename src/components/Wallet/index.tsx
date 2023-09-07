@@ -30,6 +30,18 @@ const WalletData = () => {
     setSelectedChain(blockchainList[0]);
   }, [blockchainList]);
 
+  useEffect(() => {
+    const sendSelectedChainToBackend = async () => {
+      await fetch("http://localhost:3010/blockchain-id", {
+        body: JSON.stringify({ blockchainId: selectedChain }),
+        headers: { "Content-Type": "application/json" },
+        method: "POST",
+      });
+    };
+
+    sendSelectedChainToBackend();
+  }, [selectedChain]);
+
   function handleLogout() {
     logoutWallet({});
   }

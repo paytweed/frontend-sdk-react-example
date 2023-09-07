@@ -13,14 +13,18 @@ export default function WalletActionsSection({
   const [createRecoveryKit] = hooks.useCreateRecovery();
   const [buyNft] = hooks.useBuyNft();
   const tweedClient = hooks.useTweedFrontendSDK();
-  const { data: tweedProvider } = hooks.useBlockchainProvider({ chainId: selectedChain })
+  const { data: tweedProvider } = hooks.useBlockchainProvider({
+    chainId: selectedChain,
+  });
 
   const sendTransactionEthers = async () => {
     const web3Provider = new ethers.providers.Web3Provider(tweedProvider!);
-    const address = await tweedClient.wallet.getAddress({ blockchainId: selectedChain});
+    const address = await tweedClient.wallet.getAddress({
+      blockchainId: selectedChain,
+    });
     const signer = web3Provider.getSigner();
-    await signer.sendTransaction({ to: address })
-  }
+    await signer.sendTransaction({ to: address });
+  };
 
   async function handlSendTransaction() {
     const address = await tweedClient.wallet.getAddress({
