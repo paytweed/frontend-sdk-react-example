@@ -17,7 +17,7 @@ const Application = () => {
   }, []);
 
   return (
-    <TweedFrontendSdkProvider sendMessageToBackend={sendMessageToBackend}>
+    <TweedFrontendSdkProvider defaultBlockchainIds={["polygon"]} sendMessageToBackend={sendMessageToBackend}>
       <SettingSection />
       <Wallet />
     </TweedFrontendSdkProvider>
