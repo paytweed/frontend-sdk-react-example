@@ -5,8 +5,6 @@ import {
 } from "@paytweed/frontend-sdk-react";
 import { SubTitle, Table, Td, Th } from "../../style";
 
-const chains = ["tezosGhost", "polygonMumbai", "ethereumGoerli"];
-
 interface Data {
   [k: string]: Array<CryptoTransaction>;
 }
