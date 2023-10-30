@@ -23,11 +23,11 @@ const WalletData = () => {
   } = hooks.useBlockchainList();
   const [logoutWallet] = hooks.useWalletLogout();
 
-  const chainIds = blockchainList;
+  const chainIds = blockchainList?.map((chain) => chain.chainId);
 
   useEffect(() => {
     if (!blockchainList) return;
-    setSelectedChain(blockchainList[0]);
+    setSelectedChain(chainIds?.[0]);
   }, [blockchainList]);
 
   useEffect(() => {
