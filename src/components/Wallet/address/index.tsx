@@ -18,6 +18,8 @@ export default function WalletAddressSection({
     blockchainIds: chainIds,
   });
   const tweedClient = hooks.useTweedFrontendSDK();
+  const x = hooks.useBlockchainList()
+  console.log(x);
 
   function handleShowQr() {
     tweedClient.wallet.showAddress({ blockchainId: selectedChain });

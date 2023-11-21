@@ -17,7 +17,7 @@ const Application = () => {
   }, []);
 
   return (
-    <TweedFrontendSdkProvider defaultBlockchainIds={["ethereumSepolia"]} sendMessageToBackend={sendMessageToBackend}>
+    <TweedFrontendSdkProvider defaultBlockchainIds={["tezosGhost"]} sendMessageToBackend={sendMessageToBackend}>
       <SettingSection />
       <Wallet />
     </TweedFrontendSdkProvider>
