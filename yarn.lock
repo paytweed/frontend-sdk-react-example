@@ -1899,10 +1899,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@paytweed/frontend-sdk-react@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@paytweed/frontend-sdk-react/-/frontend-sdk-react-1.1.0.tgz"
-  integrity sha512-YKunoIMNeTjsKyQE0iur7KJA6DxZVAvvyVKSRkDmm5deK+uHoq1tQeyS1SdGPiPXhuxwD5AMg0eyjbEhhJ9ZnA==
+"@paytweed/frontend-sdk-react@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/@paytweed/frontend-sdk-react/-/frontend-sdk-react-2.0.3.tgz"
+  integrity sha512-WECanICHv31qKCHh1DGr3Il4PWGDewGktlAxss6PPbNl3NH30aih3DWm7rXn7KTGBh4rk+2/lRFr75dl7nRgPA==
   dependencies:
     "@tanstack/react-query" "4.29.5"
 
