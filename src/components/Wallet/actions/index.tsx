@@ -45,7 +45,17 @@ export default function WalletActionsSection({
   }
 
   function handleBuyNft() {
-    buyNft({ nftId: "1" });
+    buyNft({ nftId: "1", callbacks: {
+      onSuccess(hash) {
+        console.log(`NFT Widget onSuccess: ${hash}`);
+      },
+      onError(err) {
+        console.log(`NFT Widget onError: ${err}`);
+      }, 
+      onClose() {
+         console.log(`NFT Widget onClose`);
+      }
+    } });
   }
 
   function handleBuyToken() {
