@@ -3,7 +3,7 @@
 To launch example:
 
 - Run [backend example](https://github.com/paytweed/backend-sdk-nodejs-example)
-- Run `npm install`
-- Run `npm start`
+- Run `yarn install`
+- Run `yarn start`
 
 You can learn more in [documentation](https://docs.paytweed.com)
